@@ -29,8 +29,9 @@ app.post("/api/generate", async (req, res) => {
 
   try {
     const message = await anthropic.messages.create({
-      model: "claude-sonnet-4-20250514",
-      max_tokens: 1000,
+      model: "claude-sonnet-5-5",
+      max_tokens: 4000,
+      output_config: { effort: "low" },
       system: `You are a warm, empathetic letter writer. Write a ${tone.toLowerCase()} ${occasion.toLowerCase()} letter based on the details provided.
 
 Rules:
