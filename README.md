@@ -54,7 +54,7 @@ module.exports = async function handler(req, res) {
 
   try {
     const message = await anthropic.messages.create({
-      model: "claude-sonnet-4-20250514",
+      model: "claude-sonnet-5-5",
       max_tokens: 1000,
       system: `You are a warm, empathetic letter writer. Write a ${tone.toLowerCase()} ${occasion.toLowerCase()} letter. Write ONLY the letter text, 150-300 words, personal, no clichés.`,
       messages: [{ role: "user", content: `Write a ${occasion.toLowerCase()} letter:\n\n${details}\n\nTone: ${tone}` }],
